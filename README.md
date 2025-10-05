@@ -2,6 +2,10 @@
 
 測試 RASP 對 Command Execution 的安全性
 
+## Warning ⚠️
+
+這個專案是用來練習實作 RASP 的安全性，僅用於學校課程作業，存在安全漏洞，請勿在生產環境使用
+
 ## Build
 
 ```sh
