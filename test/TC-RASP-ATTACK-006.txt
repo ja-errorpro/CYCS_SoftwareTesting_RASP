@@ -1,0 +1,1 @@
+`python3 -c 'with open("/tmp/pwned", "w") as f: f.write("you have been pwned\n")'`
