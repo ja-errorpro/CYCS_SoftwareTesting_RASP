@@ -13,7 +13,7 @@ static HashTable original_handlers;
 
 
 const char *inspect_functions[] = {
-    "system", "shell_exec", "passthru", "exec", NULL
+    "system", "shell_exec", "passthru", "exec","does_not_exist", NULL
 };
 
 
@@ -42,6 +42,7 @@ PHP_FUNCTION(rasp_command_inspector)
         if (strstr(command, meta_characters[i]) != NULL) {
             zend_error(E_WARNING, "RASP: [Command Injection] Blocked call to %s(). Malicious character found: %s. Command: \"%s\"", function_name, meta_characters[i], command);
             php_printf("<h1>RASP Detected and Blocked a Command Injection Attempt!</h1>");
+            fprintf(stderr, "RASP: [Command Injection] Blocked call to %s(). Malicious character found: %s. Command: \"%s\"", function_name, meta_characters[i], command);
             RETURN_NULL();
         }
     }
